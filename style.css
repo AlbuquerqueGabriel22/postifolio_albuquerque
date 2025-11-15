@@ -23,7 +23,7 @@ body {
     color: var(--cor-texto-claro);
     min-height: 100vh; /* Ajustado para a altura da tela */
 
-    background-image: url('/imagens/Gemini_Generated_Image_w1hdhw1hdhw1hdhw.png');
+    background-image: url('imagens/Gemini_Generated_Image_w1hdhw1hdhw1hdhw.png');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -410,4 +410,16 @@ main {
     padding: 20px;
     background-color: var(--cor-fundo-principal);
     border-top: 1px solid #333;
+}
+
+/* --- Regras para o item expansível quando está 'aberto' --- */
+
+/* Mostra os detalhes quando o item pai tem a classe 'aberto' */
+.item-expansivel.aberto .item-detalhes {
+    display: block;
+}
+
+/* Gira o ícone da seta para cima quando o item está aberto */
+.item-expansivel.aberto .icone-expandir {
+    transform: rotate(180deg);
 }
