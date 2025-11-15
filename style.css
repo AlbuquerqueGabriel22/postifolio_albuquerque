@@ -162,16 +162,19 @@ main {
     border-radius: 4px;
 }
 
-#redes-sociais {
+footer#contato {
     padding: 40px;
     background-color: rgba(31, 31, 31, 0.9);
     border-radius: 8px;
     margin-top: 30px;
     text-align: center;
+    position: relative; /* Necessário para posicionar o botão "voltar ao topo" */
 }
 
 .lista-redes {
     list-style: none;
+    /* Adicionado para remover padding padrão da lista */
+    padding: 0;
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -184,19 +187,51 @@ main {
 }
 
 .lista-redes i {
-    font-size: 24px;
-    margin-right: 10px;
+    font-size: 28px; /* Ícones um pouco maiores */
     color: var(--cor-destaque);
+    transition: transform 0.3s ease;
 }
 
 .lista-redes a {
     color: var(--cor-texto-claro);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
 .lista-redes a:hover {
     color: var(--cor-destaque);
+}
+
+.lista-redes a:hover i {
+    transform: translateY(-5px); /* Efeito de levantar o ícone */
+}
+
+/* Esconde o texto do link da rede social, mostrando apenas o ícone */
+.lista-redes span {
+    display: none;
+}
+
+/* Estilos para o botão "Voltar ao Topo" */
+.voltar-topo {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-fundo-principal);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.voltar-topo:hover {
+    background-color: var(--cor-texto-claro);
+    transform: scale(1.1);
+    color: var(--cor-fundo-principal);
 }
 
 /* Animação para suavizar a transição */
@@ -422,4 +457,11 @@ main {
 /* Gira o ícone da seta para cima quando o item está aberto */
 .item-expansivel.aberto .icone-expandir {
     transform: rotate(180deg);
+}
+
+/* Estilo para o texto de copyright */
+.copyright {
+    margin-top: 30px;
+    color: var(--cor-texto-secundario);
+    font-size: 0.9em;
 }

@@ -5,20 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <!-- Adicionado Font Awesome para os ícones funcionarem -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="js/port.js"></script>
     <title>Portifolio-Gabriel Albquerque</title>
+    <style>
+        /* Adiciona um efeito de rolagem suave para a página */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 <body>
     <header id="inicio">
         <h1>Seja Bem Vindo! <br> Eu me chamo Gabriel Albquerque</h1>
         <p>Profissional de Desenvolvimento e Pentest</p>
     </header>
-
-    <div class="filtro-container">
+    
+    <nav class="filtro-container">
         <button onclick="filtrar('nome')" class="ativo-filtro">Sobre</button>
         <button onclick="filtrar('trabalho')">Trabalhos</button>
         <button onclick="filtrar('projeto')">Projetos</button>
-    </div>
+    </nav>
 
     <main>
         <section id="conteudo-nome" class="conteudo-secao ativo">
@@ -36,28 +44,7 @@ Sou um eterno aprendiz e pesquisador ativo. Faço parte de projetos e pesquisas 
     
         <section id="conteudo-trabalho" class="conteudo-secao">
             <h2>Trabalhos</h2>
-            <!-- Container para os itens de trabalho -->
-            <div class="lista-expansivel">
-                <!-- Item de Trabalho 1 -->
-                <div class="item-expansivel">
-                    <div class="item-resumo" onclick="toggleDetalhes(this)">
-                        <img src="unioa/Capturar8.JPG" alt="Ícone do Gerenciador de Arquivos" class="resumo-imagem">
-                        <div class="resumo-info">
-                            <h3>Gerenciador de arquivos</h3>
-                            <div class="resumo-tags">
-                                <span class="tag-tech">Python</span>
-                                <span class="tag-tech">Tkinter</span>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down icone-expandir"></i>
-                    </div>
-                    <div class="item-detalhes">
-                        <p>Aqui você pode adicionar os detalhes completos sobre seu trabalho e responsabilidades no projeto "Gerenciador de arquivos".</p>
-                        <!-- Pode adicionar mais conteúdo, como imagens, aqui -->
-                    </div>
-                </div>
-                <!-- Adicione mais <div class="item-expansivel"> aqui para outros trabalhos -->
-            </div>
+            <p>Atualmente, estou focado em projetos pessoais e estudos, mas estou aberto a novas oportunidades. Veja meus projetos para conhecer minhas habilidades!</p>
         </section>
     
         <section id="conteudo-projeto" class="conteudo-secao">
@@ -65,7 +52,7 @@ Sou um eterno aprendiz e pesquisador ativo. Faço parte de projetos e pesquisas 
             <div class="lista-expansivel">
                 <!-- Projeto Uniões -->
                 <div class="item-expansivel">
-                    <div class="item-resumo" onclick="toggleDetalhes(this)">
+                    <button class="item-resumo" onclick="toggleDetalhes(this)">
                         <img src="unioa/telas.JPG" alt="Preview do projeto Uniões" class="resumo-imagem">
                         <div class="resumo-info">
                             <h3>Uniões - Plataforma para Sites de Casamento</h3>
@@ -77,7 +64,7 @@ Sou um eterno aprendiz e pesquisador ativo. Faço parte de projetos e pesquisas 
                             </div>
                         </div>
                         <i class="fas fa-chevron-down icone-expandir"></i>
-                    </div>
+                    </button>
                     <div class="item-detalhes">
                         <h4>O Desafio</h4>
                         <p>Criar uma plataforma "white-label" que permitisse a casais, mesmo sem conhecimento técnico, construir e gerenciar um site de casamento completo, centralizando informações, personalização e interações com convidados em um único lugar.</p>
@@ -97,7 +84,7 @@ Sou um eterno aprendiz e pesquisador ativo. Faço parte de projetos e pesquisas 
                 </div>
                 <!-- Projeto Culinária Inteligente -->
                 <div class="item-expansivel">
-                    <div class="item-resumo" onclick="toggleDetalhes(this)">
+                    <button class="item-resumo" onclick="toggleDetalhes(this)">
                         <!-- Lembre-se de adicionar uma imagem de preview para este projeto -->
                         <img src="culinaria/Capturar1.PNG" alt="Preview do projeto Culinária Inteligente" class="resumo-imagem">
                         <div class="resumo-info">
@@ -112,7 +99,7 @@ Sou um eterno aprendiz e pesquisador ativo. Faço parte de projetos e pesquisas 
                             </div>
                         </div>
                         <i class="fas fa-chevron-down icone-expandir"></i>
-                    </div>
+                    </button>
                     <div class="item-detalhes">
                         <h4>O Desafio</h4>
                         <p>Projetar uma aplicação web robusta para chefs e entusiastas da gastronomia, com o objetivo de otimizar a gestão de criações culinárias, automatizando tarefas complexas como cálculos nutricionais e planejamento de compras através da inteligência artificial.</p>
@@ -142,7 +129,7 @@ Sou um eterno aprendiz e pesquisador ativo. Faço parte de projetos e pesquisas 
                 </div>
                 <!-- Projeto Conversor de TXT para Excel -->
                 <div class="item-expansivel">
-                    <div class="item-resumo" onclick="toggleDetalhes(this)">
+                    <button class="item-resumo" onclick="toggleDetalhes(this)">
                         <img src="conversor/conversor.JPG" alt="Preview do Conversor de TXT para Excel" class="resumo-imagem">
                         <div class="resumo-info">
                             <h3>Conversor TXT para Excel com Login</h3>
@@ -156,7 +143,7 @@ Sou um eterno aprendiz e pesquisador ativo. Faço parte de projetos e pesquisas 
                             </div>
                         </div>
                         <i class="fas fa-chevron-down icone-expandir"></i>
-                    </div>
+                    </button>
                     <div class="item-detalhes">
                         <h4>O Desafio</h4>
                         <p>Desenvolver uma aplicação de desktop segura e eficiente para converter arquivos de texto (TXT) em planilhas do Excel. O sistema deveria incluir autenticação de usuários, com funcionalidades de cadastro e login, para garantir o acesso controlado à ferramenta.</p>
@@ -173,38 +160,31 @@ Sou um eterno aprendiz e pesquisador ativo. Faço parte de projetos e pesquisas 
                 </div>
             </div>
         </section>
+    </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-        <section id="redes-sociais">
+    <footer id="contato">
+        <div class="footer-container">
             <h2>Conecte-se Comigo</h2>
             <ul class="lista-redes">
                 <li>
-                    <i class="fab fa-instagram"></i>
-                    <a href="https://www.instagram.com/gabriel._.albuquerque85" target="_blank">Instagram</a>
+                    <a href="https://www.instagram.com/gabriel._.albuquerque85" target="_blank" aria-label="Meu Instagram">
+                        <i class="fab fa-instagram"></i><span>Instagram</span>
+                    </a>
                 </li>
                 <li>
-                    <i class="fab fa-linkedin-in"></i>
-                    <a href="https://www.linkedin.com/in/gabriel-albuquerque-072641332" target="_blank">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/gabriel-albuquerque-072641332" target="_blank" aria-label="Meu LinkedIn">
+                        <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+                    </a>
                 </li>
                 <li>
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/AlbuquerqueGabriel22" target="_blank">GitHub</a>
+                    <a href="https://github.com/AlbuquerqueGabriel22" target="_blank" aria-label="Meu GitHub">
+                        <i class="fab fa-github"></i><span>GitHub</span>
+                    </a>
                 </li>
             </ul>
-        </section>
-    </main>
+            <a href="#inicio" class="voltar-topo" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></a>
+            <p class="copyright">&copy; 2024 Gabriel Albuquerque. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
