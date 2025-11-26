@@ -248,7 +248,7 @@ footer#contato {
     font-size: 0.9em;
 }
 
-/* --- GALERIA DE PROJETOS --- */
+
 .galeria-projeto {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -287,7 +287,7 @@ footer#contato {
     font-size: 0.9em;
 }
 
-/* --- TAGS DE TECNOLOGIA --- */
+
 .tecnologias-container {
     display: flex;
     flex-wrap: wrap;
@@ -304,7 +304,7 @@ footer#contato {
     font-weight: 600;
 }
 
-/* --- NOVA GRADE DE PROJETOS --- */
+
 .projetos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -337,7 +337,7 @@ footer#contato {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Faz o corpo do card ocupar o espaço restante */
+    flex-grow: 1; 
 }
 
 .project-card-body h3 {
@@ -362,7 +362,7 @@ footer#contato {
 .project-card-description {
     color: var(--cor-texto-secundario);
     font-size: 0.95rem;
-    flex-grow: 1; /* Garante que a descrição empurre os links para baixo */
+    flex-grow: 1; 
 }
 
 .project-card-links {
@@ -370,7 +370,7 @@ footer#contato {
 }
 
 .btn-link-projeto {
-    /* Ajustes para parecer um link, mas ser um botão */
+    
     border: none;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
@@ -389,9 +389,9 @@ footer#contato {
     background-color: var(--cor-destaque-hover);
 }
 
-/* --- ESTILOS PARA DETALHES DO PROJETO (DENTRO DO CARD, AGORA OCULTO) --- */
+
 .project-details {
-    display: none; /* Esconde os detalhes, eles serão usados pelo JS */
+    display: none; 
 }
 
 .project-details h4 {
@@ -401,7 +401,6 @@ footer#contato {
     font-weight: 600;
 }
 
-/* --- ESTILOS DO MODAL --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -430,8 +429,8 @@ footer#contato {
     border-radius: 8px;
     width: 90%;
     max-width: 800px;
-    max-height: 90vh; /* Altura máxima de 90% da tela */
-    overflow-y: auto; /* Barra de rolagem se o conteúdo for maior */
+    max-height: 90vh; 
+    overflow-y: auto; 
     transform: scale(0.9);
     transition: transform 0.3s ease;
 }
@@ -452,7 +451,7 @@ footer#contato {
     cursor: pointer;
 }
 
-/* --- RESPONSIVIDADE --- */
+
 @media (max-width: 992px) {
     .sobre-mim-container {
         flex-direction: column;
@@ -462,14 +461,14 @@ footer#contato {
         text-align: center;
     }
     .body-container.sidebar-open {
-        /* Em telas menores, o menu sobrepõe sem empurrar o conteúdo */
+        
         transform: translateX(0);
     }
 }
 
 @media (max-width: 768px) {
     body {
-        padding-top: 70px; /* Ajusta o espaço para o header menor */
+        padding-top: 70px; 
     }
 
     header#inicio {
@@ -493,7 +492,7 @@ footer#contato {
     }
 
     .projetos-grid {
-        /* Garante uma coluna em telas de celular */
+        
         grid-template-columns: 1fr;
     }
 
