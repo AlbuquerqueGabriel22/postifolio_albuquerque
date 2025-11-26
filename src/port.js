@@ -3,28 +3,11 @@ function setupSidebar() {
     const menuToggle = document.getElementById('menu-toggle');
     const mainContainer = document.querySelector('.body-container');
     const sidebar = document.getElementById('sidebar');
-    const sidebarLinks = document.querySelectorAll('.sidebar-link');
 
-    // Função para abrir/fechar o menu
+    // Função para abrir/fechar o menu SOMENTE ao clicar no botão
     menuToggle.addEventListener('click', () => {
         sidebar.classList.toggle('open');
         mainContainer.classList.toggle('sidebar-open');
-    });
-
-    // Função para fechar o menu ao clicar em um link
-    sidebarLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            sidebar.classList.remove('open');
-            mainContainer.classList.remove('sidebar-open');
-        });
-    });
-
-    // Função para fechar o menu ao clicar fora dele
-    document.addEventListener('click', (event) => {
-        if (sidebar.classList.contains('open') && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-            sidebar.classList.remove('open');
-            mainContainer.classList.remove('sidebar-open');
-        }
     });
 }
 
@@ -68,6 +51,71 @@ function setupProjectModal() {
     });
 }
 
+function setupImageGallery() {
+    const galleryModal = document.getElementById('gallery-modal');
+    if (!galleryModal) return; // Sai se o modal não existir
+
+    const galleryImage = document.getElementById('gallery-image');
+    const closeGalleryBtn = galleryModal.querySelector('.gallery-close');
+    const prevBtn = galleryModal.querySelector('.prev');
+    const nextBtn = galleryModal.querySelector('.next');
+
+    let currentImages = [];
+    let currentIndex = 0;
+
+    const openGallery = (images, index) => {
+        currentImages = images;
+        currentIndex = index;
+        updateGalleryImage();
+        galleryModal.classList.add('visible');
+        document.body.style.overflow = 'hidden'; // Impede o scroll
+    };
+
+    const closeGallery = () => {
+        galleryModal.classList.remove('visible');
+        // Só restaura o scroll se o modal de projeto não estiver visível
+        if (!document.getElementById('project-modal').classList.contains('visible')) {
+            document.body.style.overflow = '';
+        }
+    };
+
+    const updateGalleryImage = () => {
+        if (currentImages.length > 0) {
+            galleryImage.src = currentImages[currentIndex];
+        }
+    };
+
+    const showNextImage = () => {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateGalleryImage();
+    };
+
+    const showPrevImage = () => {
+        currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateGalleryImage();
+    };
+
+    // Usa delegação de eventos para capturar cliques em imagens da galeria
+    document.body.addEventListener('click', (e) => {
+        if (e.target.tagName === 'IMG' && e.target.closest('.galeria-item')) {
+            const galleryContainer = e.target.closest('.galeria-projeto');
+            if (!galleryContainer) return;
+
+            const imageElements = galleryContainer.querySelectorAll('.galeria-item img');
+            const images = Array.from(imageElements).map(img => img.src);
+            const clickedIndex = images.indexOf(e.target.src);
+
+            openGallery(images, clickedIndex);
+        }
+    });
+
+    // Eventos de controle da galeria
+    closeGalleryBtn.addEventListener('click', closeGallery);
+    prevBtn.addEventListener('click', showPrevImage);
+    nextBtn.addEventListener('click', showNextImage);
+    galleryModal.addEventListener('click', (e) => { if (e.target === galleryModal) closeGallery(); });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
@@ -77,6 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ativa a funcionalidade do modal de projetos
     setupProjectModal();
+
+    // Ativa a funcionalidade da galeria de imagens
+    setupImageGallery();
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
