@@ -454,7 +454,6 @@ footer#contato {
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 992px) {
-    /* A regra .body-container.sidebar-open já funciona bem, não precisa de override aqui */
     .sobre-mim-container {
         flex-direction: column;
         text-align: center;
@@ -462,7 +461,67 @@ footer#contato {
     .sobre-mim-texto h2 {
         text-align: center;
     }
+    .body-container.sidebar-open {
+        /* Em telas menores, o menu sobrepõe sem empurrar o conteúdo */
+        transform: translateX(0);
+    }
 }
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Ajusta o espaço para o header menor */
+    }
+
+    header#inicio {
+        padding: 0.8rem 1.5rem;
+    }
+
+    header#inicio h1 {
+        font-size: 1.3rem;
+    }
+
+    #menu-toggle {
+        font-size: 1.8rem;
+    }
+
+    .body-container {
+        padding: 1.5rem;
+    }
+
+    .conteudo-secao h2 {
+        font-size: 2rem;
+    }
+
+    .projetos-grid {
+        /* Garante uma coluna em telas de celular */
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header#inicio h1 {
+        font-size: 1.1rem; /* Fonte ainda menor para telas muito pequenas */
+    }
+
+    header#inicio p {
+        font-size: 0.8rem;
+    }
+
+    .conteudo-secao h2 {
+        font-size: 1.8rem;
+    }
+
+    #sidebar {
+        width: 250px; /* Menu um pouco mais estreito */
+        right: -250px;
+    }
+}
+
 
 /* === Estilos para o Modal da Galeria de Imagens === */
 
