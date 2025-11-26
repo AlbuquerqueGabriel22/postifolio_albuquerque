@@ -1,4 +1,3 @@
-/* --- RESET BÁSICO E CONFIGURAÇÕES GLOBAIS --- */
 * {
     margin: 0;
     padding: 0;
@@ -26,7 +25,7 @@ body {
     color: var(--cor-texto-principal);
     background-color: var(--cor-fundo-principal);
     line-height: 1.6;
-    padding-top: 80px; /* Espaço para o header fixo */
+    padding-top: 80px; 
     transition: background-color 0.3s;
 }
 
@@ -69,8 +68,8 @@ header#inicio p {
 #sidebar {
     position: fixed;
     top: 0;
-    right: -280px; /* Começa escondido à direita */
-    left: auto; /* Garante que a propriedade left não interfira */
+    right: -280px; 
+    left: auto; 
     width: 280px;
     height: 100%;
     background-color: var(--cor-header-sidebar);
@@ -80,7 +79,7 @@ header#inicio p {
 }
 
 #sidebar.open {
-    right: 0; /* Mostra o menu vindo da direita */
+    right: 0; 
 }
 
 #sidebar nav ul {
@@ -114,7 +113,7 @@ header#inicio p {
 }
 
 .body-container.sidebar-open {
-    transform: translateX(-140px); /* Empurra o conteúdo para a esquerda (metade do menu) */
+    transform: translateX(-140px); 
     filter: blur(2px) brightness(0.7);
 }
 
@@ -504,7 +503,7 @@ footer#contato {
 
 @media (max-width: 480px) {
     header#inicio h1 {
-        font-size: 1.1rem; /* Fonte ainda menor para telas muito pequenas */
+        font-size: 1.1rem; 
     }
 
     header#inicio p {
@@ -516,7 +515,7 @@ footer#contato {
     }
 
     #sidebar {
-        width: 250px; /* Menu um pouco mais estreito */
+        width: 250px; 
         right: -250px;
     }
 }
@@ -538,7 +537,7 @@ footer#contato {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3000; /* Z-index maior que o modal de projeto */
+    z-index: 3000; 
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0s 0.3s;
