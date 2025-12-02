@@ -501,6 +501,8 @@ footer#contato {
     }
     .foto-perfil {
         max-width: 200px;
+        width: 80%;
+        height: auto;
     }
 }
 
