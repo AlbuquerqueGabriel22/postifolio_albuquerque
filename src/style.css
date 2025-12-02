@@ -526,6 +526,60 @@ footer#contato {
     }
 }
 
+/* ============================================= */
+/*         ESTILOS DA SEÇÃO "SOBRE MIM"          */
+/* ============================================= */
+
+/* Container que alinha a foto e o texto */
+.sobre-mim-container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente a foto e o texto */
+    gap: 30px; /* Espaço entre a foto e o texto */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a linha de baixo em telas pequenas */
+    justify-content: center; /* Centraliza o conteúdo quando ele quebra a linha */
+}
+
+/*
+ * ESTILO PRINCIPAL DA FOTO DE PERFIL (DESKTOP E MOBILE)
+ * Estas regras garantem que a imagem seja grande e redonda por padrão.
+*/
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Deixa a imagem completamente redonda */
+    object-fit: cover;  /* Garante que a imagem preencha o espaço sem distorcer */
+    border: 5px solid #fff; /* Borda branca para dar destaque */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+.sobre-mim-texto {
+    flex: 1; /* Faz o texto ocupar o espaço restante */
+    min-width: 300px; /* Largura mínima para o texto antes de quebrar a linha */
+}
+
+
+/* ============================================= */
+/*               AJUSTES RESPONSIVOS             */
+/* ============================================= */
+
+@media (max-width: 768px) {
+    /* Em telas menores, o container já vai quebrar a linha e centralizar
+       graças ao 'flex-wrap' e 'justify-content' definidos acima. */
+
+    .sobre-mim-container {
+        /* Altera a direção para coluna para empilhar a foto sobre o texto */
+        flex-direction: column;
+        text-align: center; /* Centraliza o texto abaixo da foto */
+    }
+
+    /*
+     * IMPORTANTE:
+     * Note que NÃO há nenhuma regra para ".foto-perfil" aqui dentro.
+     * Isso faz com que a imagem mantenha o tamanho de 200px e o formato
+     * redondo definidos anteriormente, exatamente como você queria.
+     * Se você tiver alguma regra antiga aqui que diminui a foto, REMOVA-A.
+    */
+}
 
 /* === Estilos para o Modal da Galeria de Imagens === */
 
