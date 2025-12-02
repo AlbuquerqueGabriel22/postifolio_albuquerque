@@ -500,11 +500,6 @@ footer#contato {
         padding: 1.5rem;
     }
 
-    .foto-perfil {
-        width: 180px;
-        height: 180px;
-        border-radius: 50%;
-    }
 }
 
 @media (max-width: 480px) {
