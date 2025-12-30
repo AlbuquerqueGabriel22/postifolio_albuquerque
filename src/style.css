@@ -16,6 +16,24 @@
     --sombra-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+/* --- SCROLLBAR PERSONALIZADO --- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cor-fundo-secundaria);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cor-destaque);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cor-destaque-hover);
+}
+
 html {
     scroll-behavior: smooth;
 }
